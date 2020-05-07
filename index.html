@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商业模式</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="app">
+			商业模式：<input type="text">
+			<br>
+			已选：<p v-for="(list,index) in checkbox" class="yixuan">{{list}}
+				<span v-on:click="dele(index)" style="color: red;font-weight: bold;">X</span></p>
+			<ul>
+				<li v-for="(list,index) in lists">
+					<input  type="checkbox" :name="index+1" :key="index" :value="list" v-model="checkbox" />
+					<laber :for="index+1"></laber>{{list}}
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="js/index.js"></script>
+</html>
